@@ -1,5 +1,6 @@
-package com.apiumtech.akka.http.domain.echo
+package unit.apiumtech.akka.http.domain.echo
 
+import com.apiumtech.akka.http.domain.echo.Echo
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
@@ -10,7 +11,7 @@ case class EchoSpecification() extends FlatSpec with Matchers {
   def echo(a: String = "message") = Echo(a)
 
   "An Echo" should "a uppercase message on yell" in {
-    echo().yell().toDTO.message should be("MESSAGE")
+    echo().yell().toDTO.message shouldBe "MESSAGE"
   }
 
   Seq(

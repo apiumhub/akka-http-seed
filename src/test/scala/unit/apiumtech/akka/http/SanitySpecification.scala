@@ -1,4 +1,4 @@
-package com.apiumtech.akka.http
+package unit.apiumtech.akka.http
 
 import org.scalatest.{Matchers, FlatSpec}
 

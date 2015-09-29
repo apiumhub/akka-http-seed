@@ -1,5 +1,6 @@
-package com.apiumtech.akka.http.domain.echo
+package unit.apiumtech.akka.http.domain.echo
 
+import com.apiumtech.akka.http.domain.echo.{Echo, EchoRepository, EchoService}
 import org.scalatest.{FlatSpec, Matchers}
 
 import scala.concurrent.Future

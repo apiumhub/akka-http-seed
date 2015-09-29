@@ -26,3 +26,24 @@ libraryDependencies ++= {
     "org.scalatest"     %% "scalatest"                            % scalaTestVersion              % "test"
   )
 }
+
+fork in Test := true
+
+lazy val Integration = config("integration") extend Test
+
+val `dockers` = taskKey[String]("prepare docker environment")
+val `test-ci` = taskKey[Unit]("run integration tests")
+
+`dockers` := {
+  "docker run -d --net=host mongo:3.1.8" !!
+}
+
+test := {
+  (testOnly in Test).toTask(" unit.*").value
+}
+
+`test-ci` := {
+  val dockerId = `dockers`.value
+  (testOnly in Test).toTask(" intr.*").value
+  s"docker kill $dockerId" !!
+}

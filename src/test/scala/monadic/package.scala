@@ -10,7 +10,7 @@ package object monadic {
   import scala.language.implicitConversions
 
   implicit val executionContext = SingleThreadExecutionContext()
-  implicit def futureToT[T](a: Future[T]): T = Await.result(a, 800 milliseconds)
+  implicit def futureToT[T](a: Future[T]): T = Await.result(a, 2 seconds)
 
   def monadic[T](a: => Future[T]): T = futureToT(a)
 }

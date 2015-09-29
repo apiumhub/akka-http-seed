@@ -1,7 +1,8 @@
-package com.apiumtech.akka.http.domain.echo
+package intr.apiumtech.akka.http.domain.echo
 
+import com.apiumtech.akka.http.domain.echo.{Echo, EchoRepository}
 import infr.TestRepository
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{Matchers, FlatSpec}
 
 /**
  * @author kevin 

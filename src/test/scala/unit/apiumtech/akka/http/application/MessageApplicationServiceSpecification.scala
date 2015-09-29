@@ -1,5 +1,6 @@
-package com.apiumtech.akka.http.application
+package unit.apiumtech.akka.http.application
 
+import com.apiumtech.akka.http.application.MessageApplicationService
 import com.apiumtech.akka.http.application.MessageApplicationService.{EchoedMessageList, YelledMessage}
 import com.apiumtech.akka.http.domain.echo.{EchoDTO, Echo, EchoService}
 import org.scalatest.{FlatSpec, Matchers}
